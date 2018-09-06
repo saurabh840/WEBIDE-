@@ -1,0 +1,81 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+<ViewSettingsDialog>
+    
+    <filterItems>
+        
+        <ViewSettingsFilterItem text="ID" key="ID"
+                                items="{path: '/ID'}">
+            <items>
+                <ViewSettingsItem key="String___ID___{}" text="{}"></ViewSettingsItem>
+            </items>
+        </ViewSettingsFilterItem>
+        
+        
+        <ViewSettingsFilterItem text="SOURCE" key="SOURCE"
+                                items="{path: '/SOURCE'}">
+            <items>
+                <ViewSettingsItem key="String___SOURCE___{}" text="{}"></ViewSettingsItem>
+            </items>
+        </ViewSettingsFilterItem>
+        
+        
+        <ViewSettingsFilterItem text="XREF" key="XREF"
+                                items="{path: '/XREF'}">
+            <items>
+                <ViewSettingsItem key="String___XREF___{}" text="{}"></ViewSettingsItem>
+            </items>
+        </ViewSettingsFilterItem>
+        
+        
+        <ViewSettingsFilterItem text="INPUT" key="INPUT"
+                                items="{path: '/INPUT'}">
+            <items>
+                <ViewSettingsItem key="String___INPUT___{}" text="{}"></ViewSettingsItem>
+            </items>
+        </ViewSettingsFilterItem>
+        
+        
+        <ViewSettingsFilterItem text="OUTPUT" key="OUTPUT"
+                                items="{path: '/OUTPUT'}">
+            <items>
+                <ViewSettingsItem key="String___OUTPUT___{}" text="{}"></ViewSettingsItem>
+            </items>
+        </ViewSettingsFilterItem>
+        
+        
+    </filterItems>
+    
+
+    
+    <sortItems>
+        
+        <ViewSettingsItem text="ID" key="ID" />
+        
+        <ViewSettingsItem text="SOURCE" key="SOURCE" />
+        
+        <ViewSettingsItem text="XREF" key="XREF" />
+        
+        <ViewSettingsItem text="INPUT" key="INPUT" />
+        
+        <ViewSettingsItem text="OUTPUT" key="OUTPUT" />
+        
+    </sortItems>
+    
+
+    
+    <groupItems>
+        
+        <ViewSettingsItem text="ID" key="ID" />
+        
+        <ViewSettingsItem text="SOURCE" key="SOURCE" />
+        
+        <ViewSettingsItem text="XREF" key="XREF" />
+        
+        <ViewSettingsItem text="INPUT" key="INPUT" />
+        
+        <ViewSettingsItem text="OUTPUT" key="OUTPUT" />
+        
+    </groupItems>
+    
+</ViewSettingsDialog>
+</core:FragmentDefinition>

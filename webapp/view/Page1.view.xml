@@ -1,0 +1,168 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.untitledProject.controller.Page1" xmlns="sap.m">
+	
+    <Page   showHeader="true" title="Xref Maintenance" showFooter="true" showNavButton="false">
+    <content>
+        	<IconTabBar select="handleIconTabBarSelect" expandable="false" expanded="true" applyContentPadding="true" backgroundDesign="Solid" upperCase="true" visible="true" selectedKey="All">
+        		<items>
+                    <IconTabFilter  key ="All" icon="sap-icon://document-text" iconColor="Positive" text="All" count="{/Sheet1Set/$count}" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+                         <content>
+                        	 <ScrollContainer vertical="true" height="100%" width="100%">
+                        	 	<content>
+                        <Table id="Tab1"   width="100%" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" items="{/Sheet1Set}">
+                                <infoToolbar>
+                                    <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                                        <content>
+                                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </content>
+                                    </Toolbar>
+                                </infoToolbar>
+                                <headerToolbar>
+                                    <Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
+                                        <content>
+                                            <ToolbarSpacer width=""/>
+                                            <SearchField placeholder="Search" showSearchButton="true" visible="true" width="auto" liveChange="_onSearchFieldLiveChange"/>
+                                            <Button  icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                                            <Button text="Edit" id="EditButton"  icon="sap-icon://edit" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="EditButton"/>
+                                            <Button text="Add" id="AddButton" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="AddButton" />
+                                            <Button text="Save" id="SaveButton"  icon="sap-icon://save" iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false" press="SaveButton"/>
+                                            <Button text = "Cancel" id="CancelButton"  icon="sap-icon://sys-cancel" iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false" press="_onButtonPress2"/>
+                                        </content>
+                                        <tooltip/>
+                                    </Toolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="ID" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="SOURCE" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="X-REF NAME" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="INPUT" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="OUTPUT" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Inactive">
+                                        <cells>
+                                            <Text text="{ID}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" editable="false"/>
+                                            <Text text="{SOURCE}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" editable="false"/>
+                                            <Text text="{XREF}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" editable="false"/>
+                                            <Text text="{INPUT}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" editable="false"/>
+                                            <Text text="{OUTPUT}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" editable="false"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                             </content>
+                            </ScrollContainer>
+                        </content>
+                        
+                    </IconTabFilter>
+                    <IconTabFilter  key= "Missing" icon="sap-icon://document-text" iconColor="Negative" text="Missing"  design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+                        <content>
+                            <Table id="Tab2" width="100%" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" items="{/Sheet1Set}">
+                                <infoToolbar/>
+                                <headerToolbar>
+                                    <Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
+                                        <content>
+                                            <ToolbarSpacer width=""/>
+                                            <SearchField placeholder="Search" showSearchButton="true" visible="true" width="auto" liveChange="_onSearchFieldLiveChange1"/>
+                                            <Button  type="Accept" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress3"/>
+                                            <Button  type="Accept" icon="sap-icon://edit" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                                            <Button  type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                                            <Button  type="Accept" icon="sap-icon://save" iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false" press="SaveButton"/>
+                                            <Button  type="Reject" icon="sap-icon://sys-cancel" iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false" press="_onButtonPress5"/>
+                                        </content>
+                                        <tooltip/>
+                                    </Toolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="ID" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="SOURCE" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="X-REF NAME" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="INPUT" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="OUTPUT" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <Text text="{ID}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <Text text="{SOURCE}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <Text text="{XREF}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <Text text="{INPUT}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <Text text="{OUTPUT}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </content>
+                    </IconTabFilter>
+                </items>
+                <content/>
+            </IconTabBar>
+              </content>
+        
+        <footer>
+            <Bar design="Auto">
+                <contentLeft/>
+                <contentMiddle/>
+                <contentRight>
+                    <Button  text="Edit" id="EditButtonFooter"  icon="sap-icon://edit" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="EditButton"/>
+                    <Button  text="Add" id="AddButtonFooter"  icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="AddButton"/>
+                    <Button   text="Save"  id="SaveButtonFooter" icon="sap-icon://save" iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false" press="SaveButton"/>
+                    <Button   text="Cancel" id="CancelButtonFooter" icon="sap-icon://sys-cancel" iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false" press="_onButtonPress7"/>
+                </contentRight>
+            </Bar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+    
+</mvc:View>

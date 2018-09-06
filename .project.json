@@ -1,0 +1,21 @@
+{
+  "dataBinding": {
+    "/webapp/view/Page1.view.xml": {
+      "entitySet": ""
+    }
+  },
+  "mockpreview": {
+    "mockUri": "/here/goes/your/serviceUrl/local/",
+    "metadataFilePath": "localService/metadata.xml",
+    "loadJSONFiles": true,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "generation": [
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationComponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 12 Feb 2018 15:33:37 GMT"
+    }
+  ]
+}
